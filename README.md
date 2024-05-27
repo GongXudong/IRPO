@@ -13,7 +13,7 @@ conda install --file requirements.txt
 
 ### Generate demonstrations with PID controller
 
-Sample from $ V \times \Mu \times \Chi = [v_{min}:v_{max}:v_{interval}] \times [mu_{min}:mu_{max}:mu_{interval}] \times [chi_{min}:chi_{max}:chi_{interval}] $ with PID controller and save sampled trajectories in demonstrations/data/\{step-frequence\}hz\_\{$v_{interval}$\}\_\{$mu_{interval}$\}\_\{$chi_{interval}$\}\_\{data-dir-suffix\}.
+Sample from $ V \times U \times X = [v_{min}:v_{max}:v_{interval}] \times [\mu_{min}:\mu_{max}:\mu_{interval}] \times [\chi_{min}:\chi_{max}:\chi_{interval}] $ with PID controller and save sampled trajectories in demonstrations/data/{step-frequence}hz\_{$v_{interval}$}\_{$\mu_{interval}$}\_{$\chi_{interval}$}\_{data-dir-suffix}.
 
 ```bash
 # sample trajectories by single-processing
