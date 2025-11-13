@@ -1,0 +1,59 @@
+{
+    "env": {
+        "name": "halfcheetah-medium-v2",
+        "normalize": true
+    },
+    "bc": {
+        "experiment_name": "iter_2/medium_halfcheetah_256_256_100epochs_loss_1",
+        "policy_file_save_name": "bc_checkpoint",
+        "policy_after_value_head_trained_file_save_name": "bc_checkpoint_after_value_head_trained",
+        "data_cache_dir": "rollout/data/iter_1/medium_halfcheetah_256_256_1e7steps_8envs_kl1e-1_loss_1.hdf5",
+        "seed": 1,
+        "train_epochs": 100,
+        "batch_size": 256,
+        "l2_weight": 1e-4,
+        "ent_weight": 1e-2,
+        "use_loss_callback": true,
+        "prob_true_act_threshold": 10000.0,
+        "loss_threshold": 0.0
+    },
+    "rl_bc": {
+        "experiment_name": "iter_2/medium_halfcheetah_256_256_1e7steps_8envs_kl1e-2_loss_1",
+        "seed": 4,
+        "seed_for_load_algo": 5,
+        "net_arch": [256, 256],
+        "batch_size": 256,
+        "ent_coef": 1e-4,
+        "lr": 1e-4,
+        "gamma": 0.98,
+        "gae_lambda": 0.92,
+        "activate_value_head_train_steps": 1e6,
+        "kl_with_bc_model_coef": 1e-2,
+        "train_steps": 1e7,
+        "rollout_process_num": 8,
+        "//n_steps": "采样时每个环境采样的step数，PPO每次训练收集的数据量是n_steps * num_envs",
+        "n_steps": 256,
+        "//n_epochs": "采样的数据在训练中重复使用的次数",
+        "n_epochs": 5,
+        "__eval_freq": "多少次env.step()评估一次，此处设置为1000，因为VecEnv有72个并行环境，所以实际相当于72*1000次step，评估一次",
+        "eval_freq": 1024
+    },
+    "rl": {
+        "experiment_name": "iter_2/medium_halfcheetah_256_256_1e7steps_8_normal_envs_loss_1_singleRL",
+        "seed": 9,
+        "rollout_process_num": 8,
+        "train_steps": 1e7,
+        "batch_size": 256,
+        "ent_coef": 0.000401762,
+        "max_grad_norm": 0.8,
+        "learning_rate": 2.0633e-05,
+        "vf_coef": 0.58096,
+        "clip_range": 0.1,
+        "//n_steps": "采样时每个环境采样的step数，PPO每次训练收集的数据量是n_steps * num_envs",
+        "n_steps": 256,
+        "//n_epochs": "采样的数据在训练中重复使用的次数",
+        "n_epochs": 5,
+        "__eval_freq": "多少次env.step()评估一次，此处设置为1000，因为VecEnv有72个并行环境，所以实际相当于72*1000次step，评估一次",
+        "eval_freq": 1024
+    }
+}

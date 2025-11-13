@@ -65,6 +65,11 @@ Fine-tune a pre-trained policy with PPO with config file in {config-file-name}
 python train_scripts/train_with_rl_bc_ppo.py --config-file-name configs/train/iteration_1/lambda_1e-3/ppo_bc_config_10hz_128_128_1.json
 ```
 
+## More experiments
+
+* Refer to `exp_on_d4rl/` for experiments on HalfCheetah and Hopper.
+* Refer to `exp_on_panda/` for experiments on Reach.
+
 ## Citation
 
 ```bibtex

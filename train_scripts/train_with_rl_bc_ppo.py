@@ -81,6 +81,7 @@ def train():
         custom_objects={
             "bc_trained_algo": algo_ppo_for_kl_loss,
             "learning_rate": linear_schedule(RL_LR_RATE),
+            "kl_coef_with_bc": linear_schedule(KL_WITH_BC_MODEL_COEF) if KL_ANNEALING else KL_WITH_BC_MODEL_COEF,
         },
     )
     sb3_logger.info(str(algo_ppo.policy))
@@ -191,5 +192,7 @@ if __name__ == "__main__":
     EVALUATE_FREQUENCE = train_config["rl_bc"].get("evaluate_frequence", 2048)
     EVALUATE_NUMS_IN_EVALUATION = train_config["rl_bc"].get("evaluate_nums_in_evaluation", 30)
     EVALUATE_NUMS_IN_CALLBACK = train_config["rl_bc"].get("evaluate_nums_in_callback", 3)
+    KL_WITH_BC_MODEL_COEF = train_config["rl_bc"]["kl_with_bc_model_coef"]
+    KL_ANNEALING = train_config["rl_bc"].get("kl_annealing", False)
 
     train()

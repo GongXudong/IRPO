@@ -168,5 +168,7 @@ demonstrations/data/
 f16trace.csv
 
 results/
-scripts/
 *process_log*.txt
+
+exp_on_d4rl/rollout/data
+exp_on_panda/rollout/cache
